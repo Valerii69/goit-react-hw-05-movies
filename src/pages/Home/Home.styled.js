@@ -7,6 +7,7 @@ export const Section = styled.div`
   /* margin: 10 px; */
   font-weight: 700;
   border-bottom: 3px double rgb(102, 204, 255);
+  /* background-color: pink; */
 `;
 export const Title = styled.h1`
   font-size: 25px;
