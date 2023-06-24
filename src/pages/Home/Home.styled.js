@@ -13,7 +13,7 @@ export const Title = styled.h1`
 export const TrendList = styled.ul`
   margin-top: 20px;
   max-width: 400px;
-  gap: 20px;
+  gap: 10px;
   font-size: 14px;
   margin-bottom: 6px;
 `;

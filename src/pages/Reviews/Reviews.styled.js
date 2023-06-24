@@ -6,6 +6,6 @@ export const Section = styled.div`
 `;
 export const ReviewsList = styled.ul`
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
