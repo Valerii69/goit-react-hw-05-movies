@@ -32,7 +32,6 @@ const Cast = () => {
   if (loading) {
     return <Loader />;
   }
-
   return cast.length ? (
     <Section>
       <CastList>
@@ -50,7 +49,7 @@ const Cast = () => {
     </Section>
   ) : (
     <Section>
-      <p>Cast list is empty</p>
+      <h4>Cast list is empty</h4>
     </Section>
   );
 };

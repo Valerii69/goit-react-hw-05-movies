@@ -46,7 +46,7 @@ const Reviews = () => {
     </Section>
   ) : (
     <Section>
-      <p>Reviews list is empty</p>
+      <h4>Reviews list is empty</h4>
     </Section>
   );
 };
