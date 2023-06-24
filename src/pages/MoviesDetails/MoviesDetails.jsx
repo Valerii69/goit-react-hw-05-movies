@@ -1,7 +1,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { API_KEY } from 'utils/constans';
