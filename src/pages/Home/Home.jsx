@@ -34,7 +34,9 @@ const Home = () => {
           {trendMovies.map(({ original_title, id }) => (
             <Films key={id}>
               <TrendListItem state={{ from: location }} to={`/movies/${id}`}>
-                <RiMovie2Fill style={{ paddingRight: '1px' }} />
+                <RiMovie2Fill
+                // style={{ margin: '5px' }}
+                />
                 {original_title}
               </TrendListItem>
             </Films>
