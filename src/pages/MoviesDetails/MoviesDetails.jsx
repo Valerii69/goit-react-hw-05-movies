@@ -4,7 +4,7 @@ import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-
+import { API_KEY } from 'utils/constans';
 import Loader from 'components/Loader/Loader';
 import FilmCard from 'components/FilmCard';
 import {
@@ -14,7 +14,7 @@ import {
   BtnInfoList,
   BtnLink,
 } from './MoviesDetails.styled';
-const API_KEY = '7779282c18a7b23736a627b06c608831';
+// const API_KEY = '7779282c18a7b23736a627b06c608831';
 
 const btnLink = [
   { href: 'cast', text: 'Cast' },
@@ -33,13 +33,13 @@ const MoviesDetails = () => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
     )
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
         setMovie(data);
       })
-      .catch(() => {
-        toast.error('Something went wrong');
-      })
+      // .catch(() => {
+      //   toast('Something went wrong');
+      // })
       .finally(() => setLoading(false));
   }, [movieId]);
   if (loading) {

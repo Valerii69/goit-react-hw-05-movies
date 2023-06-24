@@ -11,7 +11,9 @@ export const BtnBack = styled.button`
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid #66ccff;
-  &:hover {
+
+  &:hover,
+  :focus {
     cursor: pointer;
     background-color: #4abde3;
     font-weight: 500;
@@ -20,7 +22,12 @@ export const BtnBack = styled.button`
     background-color: #4abde3;
     font-weight: 500;
     color: black;
+    box-shadow: rgba(0, 0, 0, 0.12) 4px 1px 4px, rgba(0, 0, 0, 0.06) 0px 4px 4px,
+      rgba(0, 0, 0, 0.16) 1px 4px 6px;
   }
+  border: 2px solid rgb(102, 204, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 4px 1px 4px, rgba(0, 0, 0, 0.06) 0px 4px 4px,
+    rgba(0, 0, 0, 0.16) 1px 4px 6px;
 `;
 
 export const Section = styled.div`
@@ -42,6 +49,7 @@ export const BtnLink = styled(NavLink)`
   color: black;
   display: flex;
   padding: 5px;
+
   /* margin-left: 15 px; */
 
   /* gap: 15 px; */
@@ -51,7 +59,8 @@ export const BtnLink = styled(NavLink)`
   /* height: 40px; */
   background-color: transparent;
   border: 2px solid #4abde3;
-  border-radius: 5 px;
+  border-radius: 5px;
+
   &:hover,
   active {
     cursor: pointer;
@@ -59,4 +68,8 @@ export const BtnLink = styled(NavLink)`
     font-weight: 500;
     color: black;
   }
+
+  border: 2px solid rgb(102, 204, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 4px 1px 4px, rgba(0, 0, 0, 0.06) 0px 4px 4px,
+    rgba(0, 0, 0, 0.16) 1px 4px 6px;
 `;

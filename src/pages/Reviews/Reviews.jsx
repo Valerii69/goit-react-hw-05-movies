@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from 'components/Loader/Loader';
+import { API_KEY } from 'utils/constans';
 
 import { Section, ReviewsList } from './Reviews.styled';
-const API_KEY = '7779282c18a7b23736a627b06c608831';
+// const API_KEY = '7779282c18a7b23736a627b06c608831';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);

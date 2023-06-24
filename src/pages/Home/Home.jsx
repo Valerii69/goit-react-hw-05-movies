@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RiMovie2Fill } from 'react-icons/ri';
+import { API_KEY } from 'utils/constans';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from 'components/Loader/Loader';
 
-import { Section, Title, TrendList, TrendListItem } from './Home.styled';
-const API_KEY = '7779282c18a7b23736a627b06c608831';
+import { Section, Title, TrendList, TrendListItem, Films } from './Home.styled';
+// const API_KEY = '7779282c18a7b23736a627b06c608831';
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -31,12 +32,12 @@ const Home = () => {
       {trendMovies && (
         <TrendList>
           {trendMovies.map(({ original_title, id }) => (
-            <li key={id}>
+            <Films key={id}>
               <TrendListItem state={{ from: location }} to={`/movies/${id}`}>
                 <RiMovie2Fill style={{ paddingRight: '1px' }} />
                 {original_title}
               </TrendListItem>
-            </li>
+            </Films>
           ))}
         </TrendList>
       )}

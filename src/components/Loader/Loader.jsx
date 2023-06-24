@@ -1,17 +1,19 @@
 import css from './Loader.module.css';
-import { ThreeDots } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
 const Loader = () => {
   return (
     <div className={css.loaderContainer}>
-      <ThreeDots
-        height="80"
-        width="80"
-        radius="9"
-        color="#4fa94d"
-        ariaLabel="three-dots-loading"
+      <ThreeCircles
+        height="100"
+        width="100"
+        color="#66ccff"
         wrapperStyle={{}}
-        wrapperClassName=""
+        wrapperClass=""
         visible={true}
+        ariaLabel="three-circles-rotating"
+        outerCircleColor=""
+        innerCircleColor=""
+        middleCircleColor=""
       />
     </div>
   );

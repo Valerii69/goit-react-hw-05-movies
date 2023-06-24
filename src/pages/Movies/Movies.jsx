@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
+import { API_KEY } from 'utils/constans';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,14 +8,16 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { RiMovie2Line } from 'react-icons/ri';
 import Loader from 'components/Loader/Loader';
 import {
+  Form,
   Section,
   Input,
   Btn,
   MoviesList,
   MoviesListItem,
 } from './Movies.styled';
+import { Films } from 'pages/Home/Home.styled';
 
-const API_KEY = '7779282c18a7b23736a627b06c608831';
+// const API_KEY = '7779282c18a7b23736a627b06c608831';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -36,11 +39,11 @@ const Movies = () => {
         if (!results.length) {
           toast.error('Try again with another search word');
         }
-        const movi = results.map(({ id, original_title }) => ({
+        const moviMap = results.map(({ id, original_title }) => ({
           id,
           original_title,
         }));
-        setMovies(movi);
+        setMovies(moviMap);
       })
       .catch(() => {
         toast.error('Something went wrong');
@@ -63,7 +66,7 @@ const Movies = () => {
 
   return (
     <Section>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input
           type="text"
           name="query"
@@ -74,16 +77,16 @@ const Movies = () => {
         <Btn type="submit">
           <AiOutlineSearch size="20" />
         </Btn>
-      </form>
+      </Form>
       {movies.length > 0 && (
         <MoviesList>
           {movies.map(({ id, original_title }) => (
-            <li key={id}>
-              <MoviesListItem state={{ from: location }} to={`/movi/${id}`}>
+            <Films key={id}>
+              <MoviesListItem state={{ from: location }} to={`/movies/${id}`}>
                 <RiMovie2Line style={{ paddingRight: '2px' }} />
                 {original_title}
               </MoviesListItem>
-            </li>
+            </Films>
           ))}
         </MoviesList>
       )}

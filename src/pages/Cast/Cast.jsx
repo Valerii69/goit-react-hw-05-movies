@@ -4,10 +4,9 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from 'components/Loader/Loader';
-import { NO_IMAGE, IMG_PATH } from 'utils/constans';
+import { NO_IMAGE, IMG_PATH, API_KEY } from 'utils/constans';
 
 import { Section, CastList, CastItem } from './Cast.styled';
-const API_KEY = '7779282c18a7b23736a627b06c608831';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -32,9 +31,6 @@ const Cast = () => {
   if (loading) {
     return <Loader />;
   }
-  //   const NO_IMAGE =
-  //     'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
-  //   const IMG_PATH = 'https://image.tmdb.org/t/p/w500/';
 
   return cast.length ? (
     <Section>

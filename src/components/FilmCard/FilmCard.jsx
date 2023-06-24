@@ -9,9 +9,6 @@ const FilmCard = ({
   genres,
   backdrop_path,
 }) => {
-  // const NO_IMAGE =
-  //   'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
-  // const IMG_PATH = 'https://image.tmdb.org/t/p/w500/';
   let image = !!backdrop_path ? IMG_PATH + backdrop_path : NO_IMAGE;
 
   return (
